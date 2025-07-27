@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+    <title>CSS পরিচিতি: ওয়েবসাইটকে সুন্দর করার জাদুমন্ত্র</title>
+    <style>
+        body { font-family: 'Tiro Bangla', serif; background-color: #f0f8ff; color: #333; margin: 0; padding: 20px; line-height: 1.9; }
+        .container { max-width: 800px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #0056b3; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        .explanation { background-color: #fffbe6; border: 1px solid #ffe58f; padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .pros-cons { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 15px; }
+        @media (min-width: 600px) { .pros-cons { grid-template-columns: 1fr 1fr; } }
+        .pros { border-left: 4px solid #28a745; padding-left: 15px; }
+        .cons { border-left: 4px solid #dc3545; padding-left: 15px; }
+        .home-button { display: inline-block; background-color: #28a745; color: white; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-size: 1.1em; margin-top: 30px; transition: background-color 0.3s; }
+        code { background-color: #eef2f7; padding: 2px 6px; border-radius: 4px; color: #d63384; font-weight: bold; }
+        .code-block { background-color: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; white-space: pre; overflow-x: auto; font-size: 14px; border-left: 5px solid #007bff; margin-top: 15px; }
+        .code-block .tag { color: #f92672; }
+        .code-block .punctuation { color: #f8f8f2; }
+        .code-block .selector { color: #a6e22e; }
+        .code-block .property { color: #66d9ef; }
+        .code-block .css-value { color: #fd971f; }
+        .code-block .comment { color: #75715e; font-style: italic; }
+        .code-block .attribute { color: #a6e22e; }
+        .code-block .value { color: #e6db74; }
+        #open-playground-btn { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: #fd7e14; color: white; border: none; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor: pointer; z-index: 999; display: flex; justify-content: center; align-items: center; transition: transform 0.3s; }
+        #open-playground-btn:hover { transform: scale(1.1); }
+        #playground-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; display: none; justify-content: center; align-items: center; }
+        #floating-playground { width: 90%; max-width: 1200px; height: 85vh; background-color: #f8f9fa; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); display: flex; flex-direction: column; overflow: hidden; }
+        .playground-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #0056b3; color: white; }
+        .playground-header h3 { margin: 0; font-size: 1.4em; border: none; color: white; }
+        #close-playground-btn { background: none; border: none; color: white; font-size: 2.2em; cursor: pointer; line-height: 1; }
+        .playground-content { flex-grow: 1; display: flex; padding: 15px; gap: 15px; flex-wrap: wrap; }
+        #playground-code, #playground-output { width: 100%; height: 100%; border: 1px solid #ccc; border-radius: 8px; }
+        @media (min-width: 768px) { .playground-content { flex-wrap: nowrap; } #playground-code, #playground-output { width: 50%; } }
+        #playground-code { background-color: #2d2d2d; color: #f8f8f2; padding: 15px; font-family: 'Courier New', Courier, monospace; font-size: 15px; }
+        #playground-output { background-color: white; }
+        #playground-run-btn { width: calc(100% - 30px); padding: 12px; margin: 0 15px 15px 15px; background-color: #28a745; color: white; border: none; border-radius: 8px; font-size: 1.2em; cursor: pointer; font-family: 'Tiro Bangla', serif; transition: background-color 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS পরিচিতি: ওয়েবসাইটকে সুন্দর করার জাদুমন্ত্র</h1>
+            <p class="explanation">আমরা শিখেছি যে, HTML হলো একটি বাড়ির কঙ্কাল বা গঠন। কিন্তু শুধু কঙ্কাল দিয়ে তো আর একটি সুন্দর বাড়ি হয় না! বাড়ির দেয়ালের রঙ কী হবে, জানালাগুলো দেখতে কেমন হবে, দরজাটা কোন ডিজাইনের হবে—এই সব সৌন্দর্যবর্ধনের কাজগুলোই করে CSS। CSS এর পুরো নাম <strong>Cascading Style Sheets</strong>।</p>
+        </header>
+        <main>
+            <section>
+                <h2>CSS লেখার নিয়মকানুন (Syntax)</h2>
+                <p>CSS দিয়ে ডিজাইন করার জন্য আমাদের একটি নির্দিষ্ট ভাষায় নির্দেশ দিতে হয়। ভাবো, তুমি একজন জাদুকর এবং তোমার HTML এলিমেন্টগুলোকে তুমি তোমার ইচ্ছেমতো পরিবর্তন করতে চাও। এর জন্য তোমাকে একটি জাদুমন্ত্র বা নিয়ম মেনে চলতে হবে।</p>
+                <p>একটি সম্পূর্ণ CSS নিয়মকে "Rule Set" বলা হয়, যার দুটি প্রধান অংশ থাকে:</p>
+                <ol>
+                    <li><strong>সিলেক্টর (Selector):</strong> তুমি কোন HTML এলিমেন্টটিকে ডিজাইন করতে চাও, তা খুঁজে বের করার জন্য এটি ব্যবহৃত হয়।</li>
+                    <li><strong>ডিক্লারেশন ব্লক (Declaration Block):</strong> এখানে তুমি বলে দাও যে, কী কী পরিবর্তন করতে চাও। এটি দ্বিতীয় বন্ধনী <code>{ }</code> দিয়ে লেখা হয়।</li>
+                </ol>
+                
+                <h3>চলো, একটি উদাহরণ দিয়ে বুঝি:</h3>
+                <div class="code-block"><span class="selector">h1</span> <span class="punctuation">{</span>
+    <span class="property">color</span><span class="punctuation">:</span> <span class="css-value">blue</span><span class="punctuation">;</span>
+    <span class="property">font-size</span><span class="punctuation">:</span> <span class="css-value">24px</span><span class="punctuation">;</span>
+<span class="punctuation">}</span></div>
+
+                <div class="explanation">
+                    <ul>
+                        <li><strong>সিলেক্টর (Selector):</strong> এখানে সিলেক্টর হলো <code>h1</code>। এর মানে হলো, "হে HTML ফাইল, তোমার ভেতরে যত <code>&lt;h1&gt;</code> ট্যাগ আছে, তাদের সবাইকে খুঁজে বের করো!"</li>
+                        <li><strong>ডিক্লারেশন (Declaration):</strong> দ্বিতীয় বন্ধনীর ভেতরের প্রতিটি লাইন এক একটি ডিক্লারেশন। যেমন, <code>color: blue;</code> একটি ডিক্লারেশন। প্রতিটি ডিক্লারেশনের আবার দুটি অংশ থাকে:
+                            <ul>
+                                <li><strong>প্রোপার্টি (Property):</strong> তুমি কী পরিবর্তন করতে চাও। যেমন: <code>color</code> (লেখার রঙ), <code>font-size</code> (লেখার আকার)।</li>
+                                <li><strong>ভ্যালু (Value):</strong> তুমি পরিবর্তন করে কী করতে চাও। যেমন: <code>blue</code> (নীল), <code>24px</code> (২৪ পিক্সেল)।</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>সহজ কথায়:</strong> উপরের কোডটি ব্রাউজারকে বলছে, "সব <code>h1</code> ট্যাগের লেখার রঙ নীল করে দাও এবং তাদের আকার ২৪ পিক্সেল করে দাও।"</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>CSS লেখার ৩টি পদ্ধতি</h2>
+                <p>একটি HTML ফাইলে CSS যোগ করার তিনটি প্রধান উপায় আছে। প্রত্যেকটির নিজস্ব সুবিধা ও অসুবিধা রয়েছে।</p>
+
+                <h3>১. ইনলাইন সিএসএস (Inline CSS)</h3>
+                <p>যখন কোনো একটি নির্দিষ্ট ট্যাগের মধ্যেই স্টাইল যোগ করা হয়, তখন তাকে ইনলাইন সিএসএস বলে। এটি <code>style</code> অ্যাট্রিবিউট ব্যবহার করে লেখা হয়।</p>
+                <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">h1</span> <span class="attribute">style</span><span class="punctuation">=</span><span class="value">"color: blue; font-size: 30px;"</span><span class="punctuation">&gt;</span>এটি একটি নীল রঙের হেডিং<span class="punctuation">&lt;/</span><span class="tag">h1</span><span class="punctuation">&gt;</span></div>
+                
+                <h3>২. ইন্টারনাল সিএসএস (Internal CSS)</h3>
+                <p>যখন HTML ফাইলের <code>&lt;head&gt;</code> সেকশনের ভেতরে <code>&lt;style&gt;</code> ট্যাগ ব্যবহার করে CSS লেখা হয়, তখন তাকে ইন্টারনাল সিএসএস বলে।</p>
+                <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">head</span><span class="punctuation">&gt;</span>
+    <span class="punctuation">&lt;</span><span class="tag">style</span><span class="punctuation">&gt;</span>
+        <span class="selector">h1</span> <span class="punctuation">{</span> <span class="property">color</span><span class="punctuation">:</span> <span class="css-value">navy</span><span class="punctuation">;</span> <span class="punctuation">}</span>
+    <span class="punctuation">&lt;/</span><span class="tag">style</span><span class="punctuation">&gt;</span>
+<span class="punctuation">&lt;/</span><span class="tag">head</span><span class="punctuation">&gt;</span></div>
+
+                <h3>৩. এক্সটারনাল সিএসএস (External CSS) - (সবচেয়ে ভালো পদ্ধতি)</h3>
+                <p>এটি হলো CSS লেখার সবচেয়ে আধুনিক এবং কার্যকরী পদ্ধতি। এখানে, আমরা সম্পূর্ণ আলাদা একটি <code>.css</code> ফাইল তৈরি করি এবং <code>&lt;link&gt;</code> ট্যাগ ব্যবহার করে HTML ফাইলের সাথে যুক্ত করে দিই।</p>
+                <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">head</span><span class="punctuation">&gt;</span>
+    <span class="punctuation">&lt;</span><span class="tag">link</span> <span class="attribute">rel</span><span class="punctuation">=</span><span class="value">"stylesheet"</span> <span class="attribute">href</span><span class="punctuation">=</span><span class="value">"style.css"</span><span class="punctuation">&gt;</span>
+<span class="punctuation">&lt;/</span><span class="tag">head</span><span class="punctuation">&gt;</span></div>
+            </section>
+        </main>
+        <footer><a href="index.html" class="home-button">হোম পেজে ফিরুন</a></footer>
+    </div>
+    <button id="open-playground-btn" title="কোড প্লেগ্রাউন্ড খুলুন"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 30px; height: 30px;"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg></button>
+    <div id="playground-overlay">
+        <div id="floating-playground">
+            <div class="playground-header"><h3>কোড প্লেগ্রাউন্ড</h3><button id="close-playground-btn" title="বন্ধ করুন">&times;</button></div>
+            <div class="playground-content"><textarea id="playground-code" spellcheck="false"><style>
+  h1 {
+    color: red;
+    text-align: center;
+  }
+  p {
+    font-size: 20px;
+    color: green;
+  }
+</style>
+
+<h1>আমার স্টাইল করা হেডিং</h1>
+<p>এই প্যারাগ্রাফের ফন্ট বড় এবং রঙ সবুজ দেখাবে।</p>
+</textarea><iframe id="playground-output"></iframe></div>
+            <button id="playground-run-btn">কোড চালাও</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const openBtn = document.getElementById('open-playground-btn');
+            const closeBtn = document.getElementById('close-playground-btn');
+            const runBtn = document.getElementById('playground-run-btn');
+            const overlay = document.getElementById('playground-overlay');
+            const codeArea = document.getElementById('playground-code');
+            const outputArea = document.getElementById('playground-output');
+
+            function openPlayground() {
+                if (overlay) {
+                    overlay.style.display = 'flex';
+                }
+            }
+
+            function closePlayground() {
+                if (overlay) {
+                    overlay.style.display = 'none';
+                }
+            }
+
+            function runPlaygroundCode() {
+                if (codeArea && outputArea) {
+                    try {
+                        const code = codeArea.value;
+                        const outputDoc = outputArea.contentWindow.document;
+                        outputDoc.open();
+                        outputDoc.write(code);
+                        outputDoc.close();
+                    } catch (error) {
+                        console.error("Error running code in playground:", error);
+                    }
+                }
+            }
+
+            if (openBtn && closeBtn && runBtn) {
+                openBtn.addEventListener('click', openPlayground);
+                closeBtn.addEventListener('click', closePlayground);
+                runBtn.addEventListener('click', runPlaygroundCode);
+
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === "Escape") {
+                        closePlayground();
+                    }
+                });
+                
+                runPlaygroundCode();
+            } else {
+                console.error("Playground elements could not be found.");
+            }
+        });
+    </script>
+</body>
+</html>
