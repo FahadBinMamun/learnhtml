@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+    <title>CSS দিয়ে ডিজাইন: তোমার সৃজনশীলতার প্রকাশ</title>
+    <style>
+        body { font-family: 'Tiro Bangla', serif; background-color: #f0f8ff; color: #333; margin: 0; padding: 20px; line-height: 1.9; }
+        .container { max-width: 800px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #0056b3; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        .explanation { background-color: #fffbe6; border: 1px solid #ffe58f; padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .output-box { border: 2px dashed #ccc; padding: 20px; border-radius: 8px; margin-top: 10px; margin-bottom: 30px; }
+        .tips-box { background-color: #e9f7ef; border-left: 5px solid #28a745; padding: 15px; margin: 30px 0; border-radius: 8px; }
+        .tips-box h3 { border: none; }
+        .tips-box ul { padding-left: 20px; }
+        .home-button { display: inline-block; background-color: #28a745; color: white; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-size: 1.1em; margin-top: 30px; transition: background-color 0.3s; }
+        code { background-color: #eef2f7; padding: 2px 6px; border-radius: 4px; color: #d63384; font-weight: bold; }
+        .code-block { background-color: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; white-space: pre; overflow-x: auto; font-size: 14px; border-left: 5px solid #007bff; margin-top: 15px; }
+        .code-block .tag { color: #f92672; }
+        .code-block .punctuation { color: #f8f8f2; }
+        .code-block .selector { color: #a6e22e; }
+        .code-block .property { color: #66d9ef; }
+        .code-block .css-value { color: #fd971f; }
+        .code-block .comment { color: #75715e; font-style: italic; }
+        #open-playground-btn { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: #fd7e14; color: white; border: none; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor: pointer; z-index: 999; display: flex; justify-content: center; align-items: center; transition: transform 0.3s; }
+        #open-playground-btn:hover { transform: scale(1.1); }
+        #playground-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; display: none; justify-content: center; align-items: center; }
+        #floating-playground { width: 90%; max-width: 1200px; height: 85vh; background-color: #f8f9fa; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); display: flex; flex-direction: column; overflow: hidden; }
+        .playground-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #0056b3; color: white; }
+        .playground-header h3 { margin: 0; font-size: 1.4em; border: none; color: white; }
+        #close-playground-btn { background: none; border: none; color: white; font-size: 2.2em; cursor: pointer; line-height: 1; }
+        .playground-content { flex-grow: 1; display: flex; padding: 15px; gap: 15px; flex-wrap: wrap; }
+        #playground-code, #playground-output { width: 100%; height: 100%; border: 1px solid #ccc; border-radius: 8px; }
+        @media (min-width: 768px) { .playground-content { flex-wrap: nowrap; } #playground-code, #playground-output { width: 50%; } }
+        #playground-code { background-color: #2d2d2d; color: #f8f8f2; padding: 15px; font-family: 'Courier New', Courier, monospace; font-size: 15px; }
+        #playground-output { background-color: white; }
+        #playground-run-btn { width: calc(100% - 30px); padding: 12px; margin: 0 15px 15px 15px; background-color: #28a745; color: white; border: none; border-radius: 8px; font-size: 1.2em; cursor: pointer; font-family: 'Tiro Bangla', serif; transition: background-color 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS দিয়ে ডিজাইন: তোমার সৃজনশীলতার প্রকাশ</h1>
+            <p class="explanation">এখন আমরা CSS এর জাদুর বাক্সের ভেতরে প্রবেশ করব। এখানে আমরা শিখব কীভাবে বিভিন্ন CSS প্রোপার্টি ব্যবহার করে একটি সাদামাটা ওয়েবপেজকে রঙিন এবং আকর্ষণীয় করে তোলা যায়।</p>
+        </header>
+        <main>
+            <section>
+                <h2>রঙের খেলা: <code>color</code> এবং <code>background-color</code></h2>
+                <p>সবচেয়ে মজার কাজ হলো রঙ নিয়ে খেলা করা। CSS এ দুটি প্রধান প্রোপার্টি দিয়ে রঙ পরিবর্তন করা হয়:</p>
+                <ul>
+                    <li><strong><code>color</code>:</strong> এটি দিয়ে লেখার রঙ পরিবর্তন করা হয়।</li>
+                    <li><strong><code>background-color</code>:</strong> এটি দিয়ে যেকোনো এলিমেন্টের পেছনের বা ব্যাকগ্রাউন্ডের রঙ পরিবর্তন করা হয়।</li>
+                </ul>
+                <div class="code-block"><span class="selector">.my-box</span> <span class="punctuation">{</span>
+    <span class="property">background-color</span><span class="punctuation">:</span> <span class="css-value">navy</span><span class="punctuation">;</span>  <span class="comment">/* الخلفية রঙ নেভি ব্লু */</span>
+    <span class="property">color</span><span class="punctuation">:</span> <span class="css-value">white</span><span class="punctuation">;</span>   <span class="comment">/* লেখার রঙ সাদা */</span>
+    <span class="property">padding</span><span class="punctuation">:</span> <span class="css-value">20px</span><span class="punctuation">;</span>
+<span class="punctuation">}</span></div>
+                <h4>আউটপুট:</h4>
+                <div class="output-box"><div style="background-color: navy; color: white; padding: 20px; border-radius: 5px;">এই বক্সটির ব্যাকগ্রাউন্ড নেভি এবং লেখা সাদা।</div></div>
+            </section>
+            <section>
+                <h2>লেখার সাজসজ্জা: ফন্ট এবং টেক্সট</h2>
+                <p>ওয়েবসাইটের লেখা দেখতে কেমন হবে, তা নিয়ন্ত্রণ করা খুবই জরুরি।</p>
+                <ul>
+                    <li><strong><code>font-family</code>:</strong> লেখার ফন্ট পরিবর্তন করে।</li>
+                    <li><strong><code>font-size</code>:</strong> লেখার আকার ছোট বা বড় করে।</li>
+                    <li><strong><code>font-weight</code>:</strong> লেখাকে মোটা (bold) বা সাধারণ (normal) করে।</li>
+                    <li><strong><code>text-align</code>:</strong> লেখাকে বামে, ডানে বা মাঝে সারিবদ্ধ করে।</li>
+                </ul>
+                <div class="code-block"><span class="selector">.title</span> <span class="punctuation">{</span>
+    <span class="property">font-family</span><span class="punctuation">:</span> <span class="css-value">Verdana, sans-serif</span><span class="punctuation">;</span>
+    <span class="property">font-size</span><span class="punctuation">:</span> <span class="css-value">30px</span><span class="punctuation">;</span>
+    <span class="property">font-weight</span><span class="punctuation">:</span> <span class="css-value">bold</span><span class="punctuation">;</span>
+    <span class="property">text-align</span><span class="punctuation">:</span> <span class="css-value">center</span><span class="punctuation">;</span>
+<span class="punctuation">}</span></div>
+                <h4>আউটপুট:</h4>
+                <div class="output-box"><h2 style="font-family: Verdana, sans-serif; font-size: 30px; font-weight: bold; text-align: center; border: none;">একটি সুন্দর শিরোনাম</h2></div>
+            </section>
+        </main>
+        <footer><a href="index.html" class="home-button">হোম পেজে ফিরুন</a></footer>
+    </div>
+    <button id="open-playground-btn" title="কোড প্লেগ্রাউন্ড খুলুন"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 30px; height: 30px;"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg></button>
+    <div id="playground-overlay">
+        <div id="floating-playground">
+            <div class="playground-header"><h3>কোড প্লেগ্রাউন্ড</h3><button id="close-playground-btn" title="বন্ধ করুন">&times;</button></div>
+            <div class="playground-content"><textarea id="playground-code" spellcheck="false"><style>
+  .my-button {
+    background-color: #ff4757;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+  }
+</style>
+
+<button class="my-button">একটি সুন্দর বাটন</button>
+</textarea><iframe id="playground-output"></iframe></div>
+            <button id="playground-run-btn">কোড চালাও</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const openBtn = document.getElementById('open-playground-btn');
+            const closeBtn = document.getElementById('close-playground-btn');
+            const runBtn = document.getElementById('playground-run-btn');
+            const overlay = document.getElementById('playground-overlay');
+            const codeArea = document.getElementById('playground-code');
+            const outputArea = document.getElementById('playground-output');
+
+            function openPlayground() {
+                if (overlay) {
+                    overlay.style.display = 'flex';
+                }
+            }
+
+            function closePlayground() {
+                if (overlay) {
+                    overlay.style.display = 'none';
+                }
+            }
+
+            function runPlaygroundCode() {
+                if (codeArea && outputArea) {
+                    try {
+                        const code = codeArea.value;
+                        const outputDoc = outputArea.contentWindow.document;
+                        outputDoc.open();
+                        outputDoc.write(code);
+                        outputDoc.close();
+                    } catch (error) {
+                        console.error("Error running code in playground:", error);
+                    }
+                }
+            }
+
+            if (openBtn && closeBtn && runBtn) {
+                openBtn.addEventListener('click', openPlayground);
+                closeBtn.addEventListener('click', closePlayground);
+                runBtn.addEventListener('click', runPlaygroundCode);
+
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === "Escape") {
+                        closePlayground();
+                    }
+                });
+                
+                runPlaygroundCode();
+            } else {
+                console.error("Playground elements could not be found.");
+            }
+        });
+    </script>
+</body>
+</html>
