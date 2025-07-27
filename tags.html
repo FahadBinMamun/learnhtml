@@ -47,24 +47,61 @@
         <main>
             <section>
                 <h2>ট্যাগের গঠন: একটি এলিমেন্ট যেভাবে তৈরি হয়</h2>
-                <p>একটি সম্পূর্ণ HTML এলিমেন্ট সাধারণত তিনটি অংশ নিয়ে গঠিত: ওপেনিং ট্যাগ, কনটেন্ট এবং ক্লোজিং ট্যাগ।</p>
+                <p>একটি সম্পূর্ণ HTML এলিমেন্ট সাধারণত তিনটি অংশ নিয়ে গঠিত:</p>
+                <ol>
+                    <li><strong>ওপেনিং ট্যাগ (Opening Tag):</strong> এটি দিয়ে এলিমেন্ট শুরু হয়। যেমন: <code>&lt;p&gt;</code>।</li>
+                    <li><strong>কনটেন্ট (Content):</strong> এটি হলো সেই লেখা, ছবি বা অন্য কিছু যা আপনি দেখাতে চান।</li>
+                    <li><strong>ক্লোজিং ট্যাগ (Closing Tag):</strong> এটি দিয়ে এলিমেন্ট শেষ হয়। এটি দেখতে ওপেনিং ট্যাগের মতোই, কিন্তু এর আগে একটি স্ল্যাশ (<code>/</code>) চিহ্ন থাকে। যেমন: <code>&lt;/p&gt;</code>।</li>
+                </ol>
                 <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">p</span><span class="punctuation">&gt;</span>আমি একটি প্যারাগ্রাফ।<span class="punctuation">&lt;/</span><span class="tag">p</span><span class="punctuation">&gt;</span></div>
             </section>
+
+            <section>
+                <h2>ট্যাগের প্রকারভেদ: কন্টেইনার বনাম এম্পটি ট্যাগ</h2>
+                <p>সব ট্যাগের গঠন একরকম হয় না। কিছু ট্যাগের ভেতরে কনটেন্ট থাকে, আবার কিছুর থাকে না।</p>
+                <ul>
+                    <li><strong>কন্টেইনার ট্যাগ (Container Tags):</strong> এদের ওপেনিং ও ক্লোজিং ট্যাগ দুটোই থাকে এবং এরা কনটেন্ট ধারণ করে। যেমন: <code>&lt;h1&gt;...&lt;/h1&gt;</code>, <code>&lt;p&gt;...&lt;/p&gt;</code>।</li>
+                    <li><strong>এম্পটি ট্যাগ (Empty Tags):</strong> এদের কোনো ক্লোজিং ট্যাগ থাকে না এবং এরা কোনো কনটেন্ট ধারণ করে না। এরা নিজেরাই একটি সম্পূর্ণ এলিমেন্ট। যেমন: <code>&lt;br&gt;</code> (লাইন ব্রেক), <code>&lt;hr&gt;</code> (অনুভূমিক রেখা), <code>&lt;img&gt;</code> (ছবি)।</li>
+                </ul>
+            </section>
+
             <section>
                 <h2>কিছু গুরুত্বপূর্ণ ট্যাগ ও তাদের কাজ</h2>
+                <p>চলো, কিছু বহুল ব্যবহৃত ট্যাগ সম্পর্কে বিস্তারিত জানি।</p>
+
                 <h3>১. টেক্সট ফরম্যাটিং ট্যাগ</h3>
+                <p>এই ট্যাগগুলো লেখা সাজাতে এবং তার অর্থ প্রকাশ করতে ব্যবহৃত হয়।</p>
+                <ul>
+                    <li><code>&lt;h1&gt;</code> থেকে <code>&lt;h6&gt;</code>: এগুলো হেডিং ট্যাগ। <code>&lt;h1&gt;</code> সবচেয়ে গুরুত্বপূর্ণ ও বড় হেডিং, আর <code>&lt;h6&gt;</code> সবচেয়ে কম গুরুত্বপূর্ণ ও ছোট।</li>
+                    <li><code>&lt;p&gt;</code>: প্যারাগ্রাফ বা অনুচ্ছেদ তৈরির জন্য ব্যবহৃত হয়।</li>
+                    <li><code>&lt;strong&gt;</code>: লেখাকে মোটা (Bold) করে এবং ব্রাউজারকে বোঝায় যে এই অংশটি গুরুত্বপূর্ণ।</li>
+                    <li><code>&lt;em&gt;</code>: লেখাকে বাঁকা (Italic) করে এবং ব্রাউজারকে বোঝায় যে এই অংশে জোর দেওয়া হয়েছে।</li>
+                    <li><code>&lt;u&gt;</code>: লেখার নিচে দাগ (Underline) দেওয়ার জন্য।</li>
+                    <li><code>&lt;br&gt;</code>: নতুন লাইন তৈরি করে।</li>
+                </ul>
                 <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">h1</span><span class="punctuation">&gt;</span>এটি মূল শিরোনাম<span class="punctuation">&lt;/</span><span class="tag">h1</span><span class="punctuation">&gt;</span>
-<span class="punctuation">&lt;</span><span class="tag">p</span><span class="punctuation">&gt;</span>এটি একটি সাধারণ প্যারাগ্রাফ। <span class="punctuation">&lt;</span><span class="tag">strong</span><span class="punctuation">&gt;</span>এই অংশটি গুরুত্বপূর্ণ<span class="punctuation">&lt;/</span><span class="tag">strong</span><span class="punctuation">&gt;</span>, এবং <span class="punctuation">&lt;</span><span class="tag">em</span><span class="punctuation">&gt;</span>এই অংশে জোর দেওয়া হয়েছে<span class="punctuation">&lt;/</span><span class="tag">em</span><span class="punctuation">&gt;</span>।<span class="punctuation">&lt;/</span><span class="tag">p</span><span class="punctuation">&gt;</span></div>
+<span class="punctuation">&lt;</span><span class="tag">p</span><span class="punctuation">&gt;</span>এটি একটি সাধারণ প্যারাগ্রাফ। <span class="punctuation">&lt;</span><span class="tag">strong</span><span class="punctuation">&gt;</span>এই অংশটি গুরুত্বপূর্ণ<span class="punctuation">&lt;/</span><span class="tag">strong</span><span class="punctuation">&gt;</span>, 
+এবং <span class="punctuation">&lt;</span><span class="tag">em</span><span class="punctuation">&gt;</span>এই অংশে জোর দেওয়া হয়েছে<span class="punctuation">&lt;/</span><span class="tag">em</span><span class="punctuation">&gt;</span>।<span class="punctuation">&lt;/</span><span class="tag">p</span><span class="punctuation">&gt;</span></div>
+
                 <h3>২. স্ট্রাকচারাল ট্যাগ (Structural Tags)</h3>
+                <p>এই ট্যাগগুলো ওয়েবপেজের বিভিন্ন অংশকে ভাগ করে এবং একটি যৌক্তিক কাঠামো দেয়।</p>
+                <ul>
+                    <li><code>&lt;div&gt;</code>: এটি একটি ব্লক-লেভেল কন্টেইনার। ওয়েবপেজের বড় বড় অংশকে (যেমন: একটি সেকশন, একটি সাইডবার) ভাগ করার জন্য এটি সবচেয়ে বেশি ব্যবহৃত হয়।</li>
+                    <li><code>&lt;span&gt;</code>: এটি একটি ইনলাইন কন্টেইনার। সাধারণত একটি লাইনের ভেতরের ছোট কোনো অংশকে আলাদাভাবে স্টাইল করার জন্য এটি ব্যবহৃত হয়।</li>
+                </ul>
                  <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">div</span> <span class="attribute">class</span><span class="punctuation">=</span><span class="value">"profile"</span><span class="punctuation">&gt;</span>
+  <span class="punctuation">&lt;</span><span class="tag">h2</span><span class="punctuation">&gt;</span>আমার প্রোফাইল<span class="punctuation">&lt;/</span><span class="tag">h2</span><span class="punctuation">&gt;</span>
   <span class="punctuation">&lt;</span><span class="tag">p</span><span class="punctuation">&gt;</span>আমার নাম <span class="punctuation">&lt;</span><span class="tag">span</span> <span class="attribute">style</span><span class="punctuation">=</span><span class="value">"color:blue;"</span><span class="punctuation">&gt;</span>করিম<span class="punctuation">&lt;/</span><span class="tag">span</span><span class="punctuation">&gt;</span>।<span class="punctuation">&lt;/</span><span class="tag">p</span><span class="punctuation">&gt;</span>
 <span class="punctuation">&lt;/</span><span class="tag">div</span><span class="punctuation">&gt;</span></div>
+                <div class="explanation">ওপরের উদাহরণে, <code>&lt;div&gt;</code> দিয়ে পুরো প্রোফাইল অংশটিকে আলাদা করা হয়েছে, আর <code>&lt;span&gt;</code> দিয়ে শুধু "করিম" নামটিকে নীল রঙ করা হয়েছে।</div>
             </section>
+
             <div class="tips-box">
                 <h3>নতুনদের জন্য বিশেষ টিপস</h3>
                 <ul>
-                    <li><strong>ট্যাগ নেস্ট করা:</strong> যে ট্যাগ আগে শুরু হবে, সে ট্যাগ পরে শেষ হবে।</li>
-                    <li><strong>অর্থপূর্ণ ট্যাগ ব্যবহার করুন:</strong> যেখানে হেডিং দরকার, সেখানে <code>&lt;h1&gt;</code> ব্যবহার করুন, শুধু লেখাকে বড় করার জন্য নয়।</li>
+                    <li><strong>ট্যাগ নেস্ট করা:</strong> একটি ট্যাগের ভেতরে আরেকটি ট্যাগ সঠিকভাবে ব্যবহার করাকে নেস্টিং বলে। যে ট্যাগ আগে শুরু হবে, সে ট্যাগ পরে শেষ হবে। যেমন: <code>&lt;p&gt;&lt;strong&gt;text&lt;/strong&gt;&lt;/p&gt;</code> (সঠিক), <code>&lt;p&gt;&lt;strong&gt;text&lt;/p&gt;&lt;/strong&gt;</code> (ভুল)।</li>
+                    <li><strong>ট্যাগের নাম ছোট হাতের অক্ষরে লিখুন:</strong> যদিও বড় হাতের অক্ষরে লিখলে কোড কাজ করে, কিন্তু ছোট হাতের অক্ষরে লেখা একটি আন্তর্জাতিক স্ট্যান্ডার্ড।</li>
+                    <li><strong>অর্থপূর্ণ ট্যাগ ব্যবহার করুন:</strong> যেখানে হেডিং দরকার, সেখানে <code>&lt;h1&gt;</code> ব্যবহার করুন, শুধু লেখাকে বড় করার জন্য নয়। একে সিমেন্টিক HTML বলে।</li>
                 </ul>
             </div>
         </main>
@@ -74,7 +111,13 @@
     <div id="playground-overlay">
         <div id="floating-playground">
             <div class="playground-header"><h3>কোড প্লেগ্রাউন্ড</h3><button id="close-playground-btn" title="বন্ধ করুন">&times;</button></div>
-            <div class="playground-content"><textarea id="playground-code" spellcheck="false"><h1>আমার স্কুল</h1><p>আমার স্কুলের নাম <strong>ওমর কিন্ডারগার্টেন</strong>। <br>এটি একটি <em>চমৎকার</em> স্কুল।</p></textarea><iframe id="playground-output"></iframe></div>
+            <div class="playground-content"><textarea id="playground-code" spellcheck="false"><h1>আমার স্কুল</h1>
+<p>আমার স্কুলের নাম <strong>ওমর কিন্ডারগার্টেন</strong>। 
+<br>এটি একটি <em>চমৎকার</em> স্কুল।</p>
+<div>
+  <h2>আমার শখ</h2>
+  <p>বই পড়া ও কোডিং করা।</p>
+</div></textarea><iframe id="playground-output"></iframe></div>
             <button id="playground-run-btn">কোড চালাও</button>
         </div>
     </div>
