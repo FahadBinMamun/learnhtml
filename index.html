@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+    <title>সহজে HTML ও CSS শিখি </title>
+    <style>
+        :root { --primary-color: #007bff; --primary-dark: #0056b3; --secondary-color: #f0f8ff; --text-dark: #333; --text-light: #555; --card-bg: #ffffff; --shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        body { font-family: 'Tiro Bangla', serif; background-color: var(--secondary-color); color: var(--text-dark); margin: 0; line-height: 1.8; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        .hero { background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; text-align: center; padding: 60px 20px; border-radius: 0 0 20px 20px; margin-bottom: 40px; }
+        .hero h1 { font-size: 3em; margin: 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
+        .hero p { font-size: 1.3em; opacity: 0.9; max-width: 600px; margin: 15px auto 0; }
+        .section-title { text-align: center; font-size: 2.5em; color: var(--primary-dark); margin-bottom: 40px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background-color: var(--primary-color); border-radius: 2px; margin: 10px auto 0; }
+        .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px; }
+        .topic-card { background-color: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow); padding: 25px; text-decoration: none; color: var(--text-dark); display: flex; align-items: center; gap: 20px; transition: transform 0.3s, box-shadow 0.3s; }
+        .topic-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
+        .card-icon { flex-shrink: 0; background-color: var(--secondary-color); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
+        .card-icon svg { width: 30px; height: 30px; stroke: var(--primary-dark); }
+        .card-content h3 { margin: 0 0 5px 0; font-size: 1.4em; color: var(--primary-dark); }
+        .card-content p { margin: 0; font-size: 1em; color: var(--text-light); }
+        footer { text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #ddd; font-size: 1em; color: var(--text-light); }
+        #open-playground-btn { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: #fd7e14; color: white; border: none; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor: pointer; z-index: 999; display: flex; justify-content: center; align-items: center; transition: transform 0.3s; }
+        #open-playground-btn:hover { transform: scale(1.1); }
+        #playground-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; display: none; justify-content: center; align-items: center; }
+        #floating-playground { width: 90%; max-width: 1200px; height: 85vh; background-color: #f8f9fa; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); display: flex; flex-direction: column; overflow: hidden; }
+        .playground-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #0056b3; color: white; }
+        .playground-header h3 { margin: 0; font-size: 1.4em; border: none; color: white; }
+        #close-playground-btn { background: none; border: none; color: white; font-size: 2.2em; cursor: pointer; line-height: 1; }
+        .playground-content { flex-grow: 1; display: flex; padding: 15px; gap: 15px; flex-wrap: wrap; }
+        #playground-code, #playground-output { width: 100%; height: 100%; border: 1px solid #ccc; border-radius: 8px; }
+        @media (min-width: 768px) { .playground-content { flex-wrap: nowrap; } #playground-code, #playground-output { width: 50%; } }
+        #playground-code { background-color: #2d2d2d; color: #f8f8f2; padding: 15px; font-family: 'Courier New', Courier, monospace; font-size: 15px; }
+        #playground-output { background-color: white; }
+        #playground-run-btn { width: calc(100% - 30px); padding: 12px; margin: 0 15px 15px 15px; background-color: #28a745; color: white; border: none; border-radius: 8px; font-size: 1.2em; cursor: pointer; font-family: 'Tiro Bangla', serif; transition: background-color 0.3s; }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>ওয়েব ডেভেলপমেন্টের জগতে স্বাগতম!</h1>
+        <p>HTML ও CSS এর জাদুকরী জগৎ আবিষ্কার করতে প্রস্তুত? চলো, ধাপে ধাপে একজন দক্ষ ওয়েব ডেভেলপার হয়ে উঠি।</p>
+    </header>
+    <div class="container">
+        <main>
+            <section>
+                <h2 class="section-title">HTML: ওয়েবসাইটের ভিত্তি</h2>
+                <div class="topic-grid">
+                    <a href="intro.html" class="topic-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg></div><div class="card-content"><h3>শুরু করি: HTML কী?</h3><p>ওয়েবপেজের কঙ্কাল তৈরির প্রথম ধাপ।</p></div></a>
+                    <a href="tags.html" class="topic-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg></div><div class="card-content"><h3>HTML ট্যাগ ও এলিমেন্ট</h3><p>ওয়েবপেজের কন্টেন্ট তৈরির মূল উপাদান।</p></div></a>
+                    <a href="attributes.html" class="topic-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.438.995s.145.755.438.995l1.003.827c.48.398.668 1.03.26 1.431l-1.296 2.247a1.125 1.125 0 01-1.37.49l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.87l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.063-.374-.313-.686-.645-.87a6.52 6.52 0 01-.22-.127c-.324-.196-.72-.257-1.075-.124l-1.217.456a1.125 1.125 0 01-1.37-.49l-1.296-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.437-.995s-.145-.755-.437-.995l-1.004-.827a1.125 1.125 0 01-.26-1.431l1.296-2.247a1.125 1.125 0 011.37-.49l1.217.456c.355.133.75.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.87l.213-1.28zM15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div><div class="card-content"><h3>অ্যাট্রিবিউট কী?</h3><p>ট্যাগের ক্ষমতা বৃদ্ধি করার বিশেষ কৌশল।</p></div></a>
+                    <a href="image.html" class="topic-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg></div><div class="card-content"><h3>ছবি ও ভিডিও যোগ করা</h3><p>ওয়েবপেজকে আকর্ষণীয় করতে ছবি ও ভিডিও।</p></div></a>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">CSS: ওয়েবসাইটের সাজসজ্জা</h2>
+                <div class="topic-grid">
+                    <a href="css_intro.html" class="topic-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.572L16.5 21.75l-.398-1.178a3.375 3.375 0 00-2.455-2.456L12.75 18l1.178-.398a3.375 3.375 0 002.455-2.456L16.5 14.25l.398 1.178a3.375 3.375 0 002.456 2.456l1.178.398-1.178.398a3.375 3.375 0 00-2.456 2.456z" /></svg></div><div class="card-content"><h3>CSS পরিচিতি</h3><p>ওয়েবসাইটের রঙ, ফন্ট ও লেআউট ডিজাইন।</p></div></a>
+                    <a href="css_design.html" class="topic-card"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-4.243-4.243l3.275-3.275a4.5 4.5 0 00-6.336 4.486c.046.58.143 1.163.328 1.743m-.213 2.188a2.101 2.101 0 01-1.592.934c-.485.068-.97.068-1.455 0a2.101 2.101 0 01-1.592-.934m4.5 0a2.101 2.101 0 00-1.592-.934c-.485.068-.97.068-1.455 0a2.101 2.101 0 00-1.592.934" /></svg></div><div class="card-content"><h3>CSS দিয়ে ডিজাইন</h3><p>রঙ, বর্ডার, শ্যাডো দিয়ে পেজ সাজানো।</p></div></a>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer><p>&copy; ২০২৫ | ALPCG | Fahad Bin Mamun <br> Omar Kindergarten School & Omar Garten Academy</p></footer>
+    <button id="open-playground-btn" title="কোড প্লেগ্রাউন্ড খুলুন"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 30px; height: 30px;"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg></button>
+    <div id="playground-overlay">
+        <div id="floating-playground">
+            <div class="playground-header"><h3>কোড প্লেগ্রাউন্ড</h3><button id="close-playground-btn" title="বন্ধ করুন">&times;</button></div>
+            <div class="playground-content"><textarea id="playground-code" spellcheck="false"><h1>আমার ওয়েবপেজ</h1></textarea><iframe id="playground-output"></iframe></div>
+            <button id="playground-run-btn">কোড চালাও</button>
+        </div>
+    </div>
+    <script>
+        const openBtn = document.getElementById('open-playground-btn');
+        const closeBtn = document.getElementById('close-playground-btn');
+        const runBtn = document.getElementById('playground-run-btn');
+        const overlay = document.getElementById('playground-overlay');
+        const codeArea = document.getElementById('playground-code');
+        const outputArea = document.getElementById('playground-output');
+        function openPlayground() { overlay.style.display = 'flex'; }
+        function closePlayground() { overlay.style.display = 'none'; }
+        function runPlaygroundCode() { try { const code = codeArea.value; const outputDoc = outputArea.contentWindow.document; outputDoc.open(); outputDoc.write(code); outputDoc.close(); } catch (error) { console.error("Error:", error); } }
+        openBtn.addEventListener('click', openPlayground);
+        closeBtn.addEventListener('click', closePlayground);
+        runBtn.addEventListener('click', runPlaygroundCode);
+        document.addEventListener('keydown', function(event) { if (event.key === "Escape") { closePlayground(); } });
+        runPlaygroundCode();
+    </script>
+</body>
+</html>
