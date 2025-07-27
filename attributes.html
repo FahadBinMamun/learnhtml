@@ -46,25 +46,70 @@
         </header>
         <main>
             <section>
-                <h2>অ্যাট্রিবিউটের গঠন</h2>
-                <p>প্রতিটি অ্যাট্রিবিউটের দুটি প্রধান অংশ থাকে: Name (নাম) এবং Value (মান)।</p>
+                <h2>অ্যাট্রিবিউট কী? একটি সহজ উদাহরণ</h2>
+                <p>ধরো, <code>&lt;p&gt;</code> ট্যাগটি হলো "একটি মানুষ"। এই তথ্যটুকু যথেষ্ট নয়। মানুষটির পরিচয় কী? তার নাম কী? সে কোন ক্লাসে পড়ে?</p>
+                <p>অ্যাট্রিবিউট এই অতিরিক্ত পরিচয়গুলোই দেয়। যেমন, আমরা যদি বলি, "মানুষটি একজন ছাত্র, তার নাম করিম", তাহলে তার সম্পর্কে ধারণা পরিষ্কার হয়। HTML-এ আমরা এটা এভাবে লিখি:</p>
+                <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">p</span> <span class="attribute">class</span><span class="punctuation">=</span><span class="value">"student"</span> <span class="attribute">id</span><span class="punctuation">=</span><span class="value">"karim"</span><span class="punctuation">&gt;</span>আমি একজন ছাত্র।<span class="punctuation">&lt;/</span><span class="tag">p</span><span class="punctuation">&gt;</span></div>
+                <p>এখানে <code>class</code> এবং <code>id</code> হলো দুটি অ্যাট্রিবিউট, যা <code>&lt;p&gt;</code> ট্যাগটিকে আরও নির্দিষ্ট করে তুলেছে।</p>
             </section>
+
+            <section>
+                <h2>অ্যাট্রিবিউটের গঠন</h2>
+                <p>প্রতিটি অ্যাট্রিবিউটের দুটি প্রধান অংশ থাকে এবং এটি সবসময় ট্যাগের শুরুর অংশে (Opening Tag) লেখা হয়।</p>
+                <ol>
+                    <li><strong>Name (নাম):</strong> এটি অ্যাট্রিবিউটের পরিচয়। যেমন: <code>href</code>, <code>src</code>, <code>class</code>।</li>
+                    <li><strong>Value (মান):</strong> এটি অ্যাট্রিবিউটের নির্দিষ্ট মান, যা সবসময় ডাবল কোটেশন (<code>" "</code>) বা সিঙ্গেল কোটেশন (<code>' '</code>) এর ভেতরে লেখা হয়।</li>
+                </ol>
+                <p>গঠন: <code>name="value"</code></p>
+            </section>
+
             <section>
                 <h2>অ্যাট্রিবিউটের প্রকারভেদ</h2>
+                <p>অ্যাট্রিবিউট মূলত দুই প্রকারের হয়:</p>
+
                 <h3>১. গ্লোবাল অ্যাট্রিবিউট (Global Attributes)</h3>
-                <p>এই অ্যাট্রিবিউটগুলো প্রায় সব HTML ট্যাগের সাথেই ব্যবহার করা যায়।</p>
-                <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">p</span> <span class="attribute">style</span><span class="punctuation">=</span><span class="value">"color: blue;"</span> <span class="attribute">title</span><span class="punctuation">=</span><span class="value">"আমি একটি টুলটিপ"</span><span class="punctuation">&gt;</span>একটি স্টাইল করা প্যারাগ্রাফ<span class="punctuation">&lt;/</span><span class="tag">p</span><span class="punctuation">&gt;</span></div>
+                <p>এই অ্যাট্রিবিউটগুলো প্রায় সব HTML ট্যাগের সাথেই ব্যবহার করা যায়। এগুলোকে HTML-এর "কমন সুপারপাওয়ার" বলা যেতে পারে।</p>
+                <ul>
+                    <li><strong><code>id</code>:</strong> একটি এলিমেন্টকে একটি ইউনিক বা অদ্বিতীয় নাম দেয়। একটি পেজে একই নামের <code>id</code> একাধিকবার ব্যবহার করা যায় না। এটা অনেকটা ক্লাসের রোল নম্বরের মতো।
+                        <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">h2</span> <span class="attribute">id</span><span class="punctuation">=</span><span class="value">"main-title"</span><span class="punctuation">&gt;</span>মূল শিরোনাম<span class="punctuation">&lt;/</span><span class="tag">h2</span><span class="punctuation">&gt;</span></div>
+                    </li>
+                    <li><strong><code>class</code>:</strong> একাধিক এলিমেন্টকে একই গ্রুপে ফেলার জন্য <code>class</code> ব্যবহার করা হয়। যেমন, একটি পেজের সব বাটনকে একই ডিজাইন দেওয়ার জন্য তাদের সবাইকে একই <code>class</code> দেওয়া যেতে পারে।
+                        <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">button</span> <span class="attribute">class</span><span class="punctuation">=</span><span class="value">"btn-primary"</span><span class="punctuation">&gt;</span>ক্লিক করুন<span class="punctuation">&lt;/</span><span class="tag">button</span><span class="punctuation">&gt;</span>
+<span class="punctuation">&lt;</span><span class="tag">button</span> <span class="attribute">class</span><span class="punctuation">=</span><span class="value">"btn-primary"</span><span class="punctuation">&gt;</span>আবার ক্লিক করুন<span class="punctuation">&lt;/</span><span class="tag">button</span><span class="punctuation">&gt;</span></div>
+                    </li>
+                    <li><strong><code>style</code>:</strong> এটি দিয়ে সরাসরি একটি ট্যাগের মধ্যে CSS কোড লেখা যায় (একে Inline CSS বলে)। দ্রুত কোনো পরিবর্তনের জন্য এটি সুবিধাজনক হলেও, বড় প্রজেক্টে এটি ব্যবহার করা অনুচিত।
+                        <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">p</span> <span class="attribute">style</span><span class="punctuation">=</span><span class="value">"color: blue; font-size: 20px;"</span><span class="punctuation">&gt;</span>এই লেখাটি নীল।<span class="punctuation">&lt;/</span><span class="tag">p</span><span class="punctuation">&gt;</span></div>
+                    </li>
+                    <li><strong><code>title</code>:</strong> কোনো এলিমেন্টের উপর মাউস নিয়ে গেলে (Hover করলে) যে ছোট টেক্সট বক্সটি দেখা যায়, তা এই অ্যাট্রিবিউট দিয়ে ঠিক করা হয়।
+                        <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">p</span> <span class="attribute">title</span><span class="punctuation">=</span><span class="value">"এটি একটি প্যারাগ্রাফ"</span><span class="punctuation">&gt;</span>আমার সম্পর্কে জানতে মাউস আনুন।<span class="punctuation">&lt;/</span><span class="tag">p</span><span class="punctuation">&gt;</span></div>
+                    </li>
+                </ul>
+
                 <h3>২. নির্দিষ্ট অ্যাট্রিবিউট (Element-Specific Attributes)</h3>
                 <p>এই অ্যাট্রিবিউটগুলো শুধুমাত্র নির্দিষ্ট কিছু ট্যাগের সাথেই কাজ করে।</p>
-                <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">a</span> <span class="attribute">href</span><span class="punctuation">=</span><span class="value">"https://google.com"</span><span class="punctuation">&gt;</span>Google<span class="punctuation">&lt;/</span><span class="tag">a</span><span class="punctuation">&gt;</span>
-<span class="punctuation">&lt;</span><span class="tag">img</span> <span class="attribute">src</span><span class="punctuation">=</span><span class="value">"photo.jpg"</span> <span class="attribute">alt</span><span class="punctuation">=</span><span class="value">"একটি ছবি"</span><span class="punctuation">&gt;</span></div>
+                <ul>
+                    <li><strong><code>href</code>:</strong> এটি শুধু <code>&lt;a&gt;</code> (অ্যাঙ্কর) ট্যাগের সাথে কাজ করে এবং লিঙ্কের গন্তব্য নির্ধারণ করে।
+                        <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">a</span> <span class="attribute">href</span><span class="punctuation">=</span><span class="value">"https://google.com"</span><span class="punctuation">&gt;</span>Google<span class="punctuation">&lt;/</span><span class="tag">a</span><span class="punctuation">&gt;</span></div>
+                    </li>
+                    <li><strong><code>src</code>:</strong> এটি <code>&lt;img&gt;</code>, <code>&lt;video&gt;</code>, <code>&lt;iframe&gt;</code> ট্যাগের সাথে কাজ করে এবং ফাইলের উৎস (Source) বলে দেয়।
+                        <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">img</span> <span class="attribute">src</span><span class="punctuation">=</span><span class="value">"photo.jpg"</span><span class="punctuation">&gt;</span></div>
+                    </li>
+                    <li><strong><code>alt</code>:</strong> এটি শুধু <code>&lt;img&gt;</code> ট্যাগের সাথে ব্যবহৃত হয়। ছবি লোড না হলে এই লেখাটি দেখায়।
+                        <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">img</span> <span class="attribute">src</span><span class="punctuation">=</span><span class="value">"photo.jpg"</span> <span class="attribute">alt</span><span class="punctuation">=</span><span class="value">"একটি সুন্দর প্রাকৃতিক দৃশ্য"</span><span class="punctuation">&gt;</span></div>
+                    </li>
+                     <li><strong><code>disabled</code>:</strong> এটি <code>&lt;button&gt;</code> বা <code>&lt;input&gt;</code> ট্যাগকে নিষ্ক্রিয় করে দেয়।
+                        <div class="code-block"><span class="punctuation">&lt;</span><span class="tag">button</span> <span class="attribute">disabled</span><span class="punctuation">&gt;</span>এই বাটন কাজ করবে না<span class="punctuation">&lt;/</span><span class="tag">button</span><span class="punctuation">&gt;</span></div>
+                    </li>
+                </ul>
             </section>
+
             <div class="tips-box">
                 <h3>নতুনদের জন্য বিশেষ টিপস</h3>
                 <ul>
-                    <li>সবসময় ছোট হাতের অক্ষর ব্যবহার করুন।</li>
-                    <li>কোটেশন ভুলবেন না।</li>
-                    <li><code>class</code> বনাম <code>id</code>: অনেকগুলো এলিমেন্টকে একই রকম ডিজাইন দিতে <code>class</code> ব্যবহার করুন। একটি মাত্র নির্দিষ্ট এলিমেন্টকে ধরতে <code>id</code> ব্যবহার করুন।</li>
+                    <li><strong>সবসময় ছোট হাতের অক্ষর ব্যবহার করুন:</strong> যদিও HTML অ্যাট্রিবিউটের নাম বড় হাতের অক্ষরে লিখলেও কাজ করে, কিন্তু স্ট্যান্ডার্ড নিয়ম হলো ছোট হাতের অক্ষর (lowercase) ব্যবহার করা।</li>
+                    <li><strong>কোটেশন ভুলবেন না:</strong> অ্যাট্রিবিউটের ভ্যালু সবসময় ডাবল (<code>" "</code>) বা সিঙ্গেল (<code>' '</code>) কোটেশনের ভেতরে রাখুন। এটি একটি ভালো অভ্যাস।</li>
+                    <li><strong><code>class</code> বনাম <code>id</code>:</strong> যখন অনেকগুলো এলিমেন্টকে একই রকম ডিজাইন দিতে চাইবেন, তখন <code>class</code> ব্যবহার করুন। আর যখন একটি মাত্র নির্দিষ্ট এলিমেন্টকে ধরতে চাইবেন (বিশেষ করে JavaScript দিয়ে), তখন <code>id</code> ব্যবহার করুন।</li>
+                    <li><strong>অর্থপূর্ণ নাম দিন:</strong> <code>class</code> বা <code>id</code> এর নাম এমনভাবে দিন যেন তা দেখেই বোঝা যায় এলিমেন্টটি কী কাজ করছে। যেমন: <code>class="header-title"</code> বা <code>id="login-form"</code>।</li>
                 </ul>
             </div>
         </main>
